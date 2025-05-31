@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Seni Seviyorum ❤️</title>
+  <style>
+    body {
+      background-color: #fff0f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      font-family: 'Comic Sans MS', cursive;
+    }
+    h1 {
+      color: #e60073;
+      font-size: 3rem;
+      animation: pop 1s ease-in-out infinite alternate;
+    }
+    @keyframes pop {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+    .heart {
+      width: 100px;
+      height: 90px;
+      position: relative;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 150px;
+      background: red;
+      border-radius: 50px 50px 0 0;
+      transform: rotate(-45deg);
+      top: 0;
+      left: 50px;
+    }
+    .heart::after {
+      left: 0;
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+  <h1>Seni Seviyorum!</h1>
+</body>
+</html>
