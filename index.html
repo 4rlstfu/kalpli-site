@@ -1,52 +1,71 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Seni Seviyorum ❤️</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sana Kalpten ❤️</title>
   <style>
     body {
-      background-color: #fff0f6;
+      background: #fff0f5;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       flex-direction: column;
-      font-family: 'Comic Sans MS', cursive;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
     }
-    h1 {
-      color: #e60073;
-      font-size: 3rem;
-      animation: pop 1s ease-in-out infinite alternate;
-    }
-    @keyframes pop {
-      from { transform: scale(1); }
-      to { transform: scale(1.1); }
-    }
+
     .heart {
       width: 100px;
       height: 90px;
       position: relative;
+      transform: rotate(-45deg);
+      animation: heartbeat 1s infinite;
+      margin-bottom: 20px;
     }
+
     .heart::before,
     .heart::after {
       content: "";
-      position: absolute;
       width: 100px;
-      height: 150px;
+      height: 90px;
+      position: absolute;
       background: red;
-      border-radius: 50px 50px 0 0;
-      transform: rotate(-45deg);
-      top: 0;
-      left: 50px;
+      border-radius: 50%;
     }
-    .heart::after {
+
+    .heart::before {
+      top: -50px;
       left: 0;
-      transform: rotate(45deg);
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.2) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+
+    .text {
+      font-size: 24px;
+      color: #c2185b;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <div class="heart"></div>
-  <h1>Seni Seviyorum!</h1>
+  <div class="text">Seni 3000 kez seviyorum maymun 💖</div>
 </body>
 </html>
